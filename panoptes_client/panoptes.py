@@ -56,8 +56,8 @@ class Panoptes(object):
         self.endpoint = endpoint or os.environ.get('PANOPTES_ENDPOINT')
         self.username = username or os.environ.get('PANOPTES_USERNAME')
         self.password = password or os.environ.get('PANOPTES_PASSWORD')
-        self.redirect_url = redirect_url
-        self.client_secret = client_secret
+        self.redirect_url = redirect_url or os.environ.get('PANOPTES_REDIRECT_URL')
+        self.client_secret = client_secret or os.environ.get('PANOPTES_CLIENT_SECRET')
 
         if client_id:
             self.client_id = client_id
